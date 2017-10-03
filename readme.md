@@ -76,6 +76,10 @@ d3.csv("temperature.csv", function (error, data) { //From now on the data in tem
             
 ```
 
+## Comments
+
+If you download the js file, you will find a lot of comments explaining the code. 
+
 ## Sources
 
 These were the source I've used to help me understand the D3 Library
