@@ -49,7 +49,7 @@ In this part I will show a more indept view of the changes I've made to the code
   y.domain([d3.min(data, function(d) { return d.low; }), d3.max(data, function(d) { return d.high; })]);
       
 ```
- **Fixed keys & V4 version:**
+ **Fixed keys:**
  
  ```Javascript //Re:written code
   var
