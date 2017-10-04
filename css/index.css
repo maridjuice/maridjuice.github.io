@@ -1,11 +1,21 @@
     body {
         font: 10px sans-serif;
+        font-family: 'Ubuntu', sans-serif;
+        background-color: #BA1200;
+    }
+    
+    h1 {
+        font-weight: 400;
+        margin-top: 2em;
+        margin-left: 2.3em;
+        font-size: 4em;
+        color: #EDF2F4;
     }
     
     .axis path,
     .axis line {
         fill: none;
-        stroke: #000;
+        stroke: #EDF2F4;
         shape-rendering: crispEdges;
     }
     
@@ -21,11 +31,18 @@
     
     .area {
         fill: none;
-        stroke: darkblue;
+        stroke: #EDF2F4;
         stroke-width: 1px;
     }
     
     svg {
         width: 100vw;
         height: 100vh;
+        margin: 0 auto;
+    }
+    
+    text {
+        font-size: 2em;
+        font-family: 'Ubuntu', sans-serif;
+        fill: #EDF2F4;
     }
