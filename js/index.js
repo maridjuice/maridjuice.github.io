@@ -1,8 +1,8 @@
 var margin = {
-        top: 20,
+        top: 100,
         right: 20,
         bottom: 30,
-        left: 50
+        left: 100
     },
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -67,15 +67,22 @@ d3.csv("temperature.csv", function (error, data) { //From now on the data in tem
     svg.append("g") //places the g element in the svg, which groups shapes together - https://stackoverflow.com/questions/17057809/d3-js-what-is-g-in-appendg-d3-js-code
         .attr("class", "x axis") //gives the g element the class of x and axis
         .attr("transform", "translate(0," + height + ")") //transform and translate moves the group to the coordinates 0 and height. Height is 500, which was given earlier in this file, so it places the g on the coordinates 0,500. Which means it starts completely left and 500 pixels from the top.
-        .call(xAxis); //calls the variable xAxis which contains a function the scales the data to the x axis 
+        .call(xAxis) //calls the variable xAxis which contains a function the scales the data to the x axis 
+        .append("text")
+        .text("Years")
+        .attr("x", 400)
+        .attr("y", 75);
 
     svg.append("g") //creates another group inside the svg
         .attr("class", "y axis") // gives the group the classes y and axis
         .call(yAxis) //calls the yAxis variable which contains a function
         .append("text") //places text in the group
         .attr("transform", "rotate(-90)") //rotates the text 90 degrees
-        .attr("y", 6) //places the text 6px from the top of the svg
-        .attr("dy", "1.71em") //places the element, text, on the y axis of the y axis. - https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dy
+        .attr("y", 0) //places the text 6px from the left of the svg, because it was rotated.
+        .attr("x", -90)
+
+    .attr("dy", "-2.71em") //places the element, text, on the y axis of the y axis. - https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dy
         .style("text-anchor", "end") //alligns the the text to the end //https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor
+        .attr("fill", "#000") //Makes it white
         .text("Temperature (ºF)"); //adds the actual text
 });
